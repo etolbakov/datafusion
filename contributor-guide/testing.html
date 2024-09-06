@@ -120,6 +120,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference external" href="https://datafusion.apache.org/blog/">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference external" href="https://github.com/apache/datafusion/blob/main/CODE_OF_CONDUCT.md">
    Code of conduct
   </a>
@@ -144,6 +149,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../user-guide/example-usage.html">
    Example Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/crate-configuration.html">
+   Crate Configuration
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -271,6 +281,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/explain-usage.html">
+   Reading Explain Plans
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../user-guide/faq.html">
    Frequently Asked Questions
   </a>
@@ -338,6 +353,11 @@
    Profiling Cookbook
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../library-user-guide/query-optimizer.html">
+   DataFusion Query Optimizer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -381,13 +401,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="quarterly_roadmap.html">
-   Quarterly Roadmap
+  <a class="reference internal" href="governance.html">
+   Governance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="governance.html">
-   Governance
+  <a class="reference internal" href="inviting.html">
+   Inviting New Committers and PMC Members
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -472,10 +492,30 @@
   <a class="reference internal nav-link" href="#sqllogictests-tests">
    sqllogictests Tests
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rust-integration-tests">
+   Rust Integration Tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sql-fuzz-testing">
+   SQL “Fuzz” testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-examples">
+   Documentation Examples
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rust-integration-tests">
-     Rust Integration Tests
+    <a class="reference internal nav-link" href="#api-documentation-examples">
+     API Documentation Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-guide-documentation">
+     User Guide Documentation
     </a>
    </li>
   </ul>
@@ -563,20 +603,48 @@ Pyramid</a>
 and tries to follow the Rust standard <a class="reference external" href="https://doc.rust-lang.org/book/ch11-03-test-organization.html">Testing Organization</a> in the The Book.</p>
 <section id="unit-tests">
 <h2>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">¶</a></h2>
-<p>Tests for code in an individual module are defined in the same source file with a <code class="docutils literal notranslate"><span class="pre">test</span></code> module, following Rust convention.</p>
+<p>Tests for code in an individual module are defined in the same source file with a <code class="docutils literal notranslate"><span class="pre">test</span></code> module, following Rust convention.
+The <a class="reference external" href="https://github.com/apache/datafusion/tree/main/datafusion/common/src/test_util.rs">test_util</a> module provides useful macros to write unit tests effectively, such as <code class="docutils literal notranslate"><span class="pre">assert_batches_sorted_eq</span></code> and <code class="docutils literal notranslate"><span class="pre">assert_batches_eq</span></code> for RecordBatches and <code class="docutils literal notranslate"><span class="pre">assert_contains</span></code> / <code class="docutils literal notranslate"><span class="pre">assert_not_contains</span></code> which are used extensively in the codebase.</p>
 </section>
 <section id="sqllogictests-tests">
 <h2>sqllogictests Tests<a class="headerlink" href="#sqllogictests-tests" title="Link to this heading">¶</a></h2>
 <p>DataFusion’s SQL implementation is tested using <a class="reference external" href="https://github.com/apache/datafusion/tree/main/datafusion/sqllogictest">sqllogictest</a> which are run like any other Rust test using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span> <span class="pre">--test</span> <span class="pre">sqllogictests</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">sqllogictests</span></code> tests may be less convenient for new contributors who are familiar with writing <code class="docutils literal notranslate"><span class="pre">.rs</span></code> tests as they require learning another tool. However, <code class="docutils literal notranslate"><span class="pre">sqllogictest</span></code> based tests are much easier to develop and maintain as they 1) do not require a slow recompile/link cycle and 2) can be automatically updated via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span> <span class="pre">--test</span> <span class="pre">sqllogictests</span> <span class="pre">--</span> <span class="pre">--complete</span></code>.</p>
 <p>Like similar systems such as <a class="reference external" href="https://duckdb.org/dev/testing">DuckDB</a>, DataFusion has chosen to trade off a slightly higher barrier to contribution for longer term maintainability.</p>
+</section>
 <section id="rust-integration-tests">
-<h3>Rust Integration Tests<a class="headerlink" href="#rust-integration-tests" title="Link to this heading">¶</a></h3>
+<h2>Rust Integration Tests<a class="headerlink" href="#rust-integration-tests" title="Link to this heading">¶</a></h2>
 <p>There are several tests of the public interface of the DataFusion library in the <a class="reference external" href="https://github.com/apache/datafusion/tree/main/datafusion/core/tests">tests</a> directory.</p>
 <p>You can run these tests individually using <code class="docutils literal notranslate"><span class="pre">cargo</span></code> as normal command such as</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cargo<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-p<span class="w"> </span>datafusion<span class="w"> </span>--test<span class="w"> </span>parquet_exec
 </pre></div>
 </div>
+</section>
+<section id="sql-fuzz-testing">
+<h2>SQL “Fuzz” testing<a class="headerlink" href="#sql-fuzz-testing" title="Link to this heading">¶</a></h2>
+<p>DataFusion uses the <a class="reference external" href="https://github.com/sqlancer/sqlancer">SQLancer</a> for “fuzz” testing: it generates random SQL
+queries and execute them against DataFusion to find bugs.</p>
+<p>The code is in the <a class="reference external" href="https://github.com/datafusion-contrib/datafusion-sqllancer">datafusion-sqllancer</a> repository, and we welcome further
+contributions. Kudos to <a class="reference external" href="https://github.com/2010YOUY01">&#64;2010YOUY01</a> for the initial implementation.</p>
+</section>
+<section id="documentation-examples">
+<h2>Documentation Examples<a class="headerlink" href="#documentation-examples" title="Link to this heading">¶</a></h2>
+<p>We use Rust <a class="reference external" href="https://doc.rust-lang.org/rust-by-example/testing/doc_testing.html">doctest</a> to verify examples from the documentation are correct and
+up-to-date. These tests are run as part of our CI and you can run them them
+locally with the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cargo<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--doc
+</pre></div>
+</div>
+<section id="api-documentation-examples">
+<h3>API Documentation Examples<a class="headerlink" href="#api-documentation-examples" title="Link to this heading">¶</a></h3>
+<p>As with other Rust projects, examples in doc comments in <code class="docutils literal notranslate"><span class="pre">.rs</span></code> files are
+automatically checked to ensure they work and evolve along with the code.</p>
+</section>
+<section id="user-guide-documentation">
+<h3>User Guide Documentation<a class="headerlink" href="#user-guide-documentation" title="Link to this heading">¶</a></h3>
+<p>Rust example code from the user guide (anything marked with ```rust) is also
+tested in the same way using the <a class="reference external" href="https://docs.rs/doc-comment/latest/doc_comment">doc_comment</a> crate. See the end of
+<a class="reference external" href="https://github.com/apache/datafusion/blob/main/datafusion/core/src/lib.rs#L583">core/src/lib.rs</a> for more details.</p>
 </section>
 </section>
 <section id="benchmarks">
@@ -666,7 +734,7 @@ and tries to follow the Rust standard <a class="reference external" href="https:
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br>
 </p>
     </div>
     

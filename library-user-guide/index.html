@@ -120,6 +120,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference external" href="https://datafusion.apache.org/blog/">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference external" href="https://github.com/apache/datafusion/blob/main/CODE_OF_CONDUCT.md">
    Code of conduct
   </a>
@@ -144,6 +149,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../user-guide/example-usage.html">
    Example Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/crate-configuration.html">
+   Crate Configuration
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -271,6 +281,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/explain-usage.html">
+   Reading Explain Plans
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../user-guide/faq.html">
    Frequently Asked Questions
   </a>
@@ -338,6 +353,11 @@
    Profiling Cookbook
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="query-optimizer.html">
+   DataFusion Query Optimizer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -381,13 +401,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../contributor-guide/quarterly_roadmap.html">
-   Quarterly Roadmap
+  <a class="reference internal" href="../contributor-guide/governance.html">
+   Governance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../contributor-guide/governance.html">
-   Governance
+  <a class="reference internal" href="../contributor-guide/inviting.html">
+   Inviting New Committers and PMC Members
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -506,8 +526,22 @@
 -->
 <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
-<p>The library user guide explains how to use the DataFusion library as a dependency in your Rust project. Please check out the user-guide for more details on how to use DataFusion’s SQL and DataFrame APIs, or the contributor guide for details on how to contribute to DataFusion.</p>
-<p>If you haven’t reviewed the <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/#architecture">architecture section in the docs</a>, it’s a useful place to get the lay of the land before starting down a specific path.</p>
+<p>The library user guide explains how to use the DataFusion library as a
+dependency in your Rust project and customize its behavior using its extension APIs.</p>
+<p>Please check out the <a class="reference internal" href="../user-guide/example-usage.html"><span class="std std-doc">user guide</span></a> for getting started using
+DataFusion’s SQL and DataFrame APIs, or the <a class="reference internal" href="../contributor-guide/index.html"><span class="std std-doc">contributor guide</span></a>
+for details on how to contribute to DataFusion.</p>
+<p>If you haven’t reviewed the <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/#architecture">architecture section in the docs</a>, it’s a
+useful place to get the lay of the land before starting down a specific path.</p>
+<p>DataFusion is designed to be extensible at all points, including</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined Functions (UDFs)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined Aggregate Functions (UDAFs)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined Table Source (<code class="docutils literal notranslate"><span class="pre">TableProvider</span></code>) for tables</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined <code class="docutils literal notranslate"><span class="pre">Optimizer</span></code> passes (plan rewrites)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined <code class="docutils literal notranslate"><span class="pre">LogicalPlan</span></code> nodes</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code> nodes</p></li>
+</ul>
 </section>
 
 
@@ -552,7 +586,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br>
 </p>
     </div>
     

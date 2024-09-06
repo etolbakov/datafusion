@@ -120,6 +120,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference external" href="https://datafusion.apache.org/blog/">
+   Blog
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference external" href="https://github.com/apache/datafusion/blob/main/CODE_OF_CONDUCT.md">
    Code of conduct
   </a>
@@ -144,6 +149,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../example-usage.html">
    Example Usage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../crate-configuration.html">
+   Crate Configuration
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -271,6 +281,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../explain-usage.html">
+   Reading Explain Plans
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../faq.html">
    Frequently Asked Questions
   </a>
@@ -338,6 +353,11 @@
    Profiling Cookbook
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../library-user-guide/query-optimizer.html">
+   DataFusion Query Optimizer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -381,13 +401,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../contributor-guide/quarterly_roadmap.html">
-   Quarterly Roadmap
+  <a class="reference internal" href="../../contributor-guide/governance.html">
+   Governance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../contributor-guide/governance.html">
-   Governance
+  <a class="reference internal" href="../../contributor-guide/inviting.html">
+   Inviting New Committers and PMC Members
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -556,10 +576,11 @@ instead.</p>
 that there is <code class="docutils literal notranslate"><span class="pre">.dockerignore</span></code> file in the root of the repository that may need to be deleted in order for
 this to work.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/apache/datafusion
-<span class="nb">cd</span><span class="w"> </span>arrow-datafusion
-git<span class="w"> </span>checkout<span class="w"> </span><span class="m">12</span>.0.0
+<span class="nb">cd</span><span class="w"> </span>datafusion
+<span class="c1"># Note: the build can take a while</span>
 docker<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>datafusion-cli/Dockerfile<span class="w"> </span>.<span class="w"> </span>--tag<span class="w"> </span>datafusion-cli
-docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span>your_data_location<span class="k">)</span>:/data<span class="w"> </span>datafusion-cli
+<span class="c1"># You can also bind persistent storage with `-v /path/to/data:/data`</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>datafusion-cli
 </pre></div>
 </div>
 </section>
@@ -607,7 +628,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </s
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br>
 </p>
     </div>
     
