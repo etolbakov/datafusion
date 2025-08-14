@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Operators &#8212; Apache DataFusion  documentation</title>
+    <title>Operators and Literals &#8212; Apache DataFusion  documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -22,16 +22,15 @@
       
   
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css?v=1140d252" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=c6d785ac" />
     
     <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
   
     <script src="../../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="true" defer="true" src="https://buttons.github.io/buttons.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Aggregate Functions" href="aggregate_functions.html" />
@@ -152,6 +151,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../features.html">
+   Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../concepts-readings-events.html">
+   Concepts, Readings, Events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../crate-configuration.html">
    Crate Configuration
   </a>
@@ -184,6 +193,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../cli/datasources.html">
      Local Files / Directories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/functions.html">
+     CLI Specific Functions
     </a>
    </li>
   </ul>
@@ -245,7 +259,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Operators
+     Operators and Literals
     </a>
    </li>
    <li class="toctree-l2">
@@ -264,13 +278,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sql_status.html">
-     Status
+    <a class="reference internal" href="special_functions.html">
+     Special Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="write_options.html">
-     Write Options
+    <a class="reference internal" href="format_options.html">
+     Format Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepared_statements.html">
+     Prepared Statements
     </a>
    </li>
   </ul>
@@ -300,6 +319,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../library-user-guide/index.html">
    Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../library-user-guide/upgrading.html">
+   Upgrade Guides
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../library-user-guide/extensions.html">
+   Extensions List
   </a>
  </li>
  <li class="toctree-l1">
@@ -333,14 +362,36 @@
    Catalogs, Schemas, and Tables
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../library-user-guide/adding-udfs.html">
-   Adding User Defined Functions: Scalar/Window/Aggregate/Table Functions
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../library-user-guide/functions/index.html">
+   Functions
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../library-user-guide/functions/adding-udfs.html">
+     Adding User Defined Functions: Scalar/Window/Aggregate/Table Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../library-user-guide/functions/spark.html">
+     Spark Compatible Functions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../library-user-guide/custom-table-providers.html">
    Custom Table Provider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../library-user-guide/table-constraints.html">
+   Table Constraint Enforcement
   </a>
  </li>
  <li class="toctree-l1">
@@ -376,8 +427,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../contributor-guide/getting_started.html">
-   Getting Started
+  <a class="reference internal" href="../../contributor-guide/development_environment.html">
+   Development Environment
   </a>
  </li>
  <li class="toctree-l1">
@@ -388,6 +439,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../contributor-guide/testing.html">
    Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contributor-guide/api-health.html">
+   API health policy
   </a>
  </li>
  <li class="toctree-l1">
@@ -414,8 +470,8 @@
   <a class="reference internal" href="../../contributor-guide/specification/index.html">
    Specifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -431,6 +487,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contributor-guide/gsoc_application_guidelines.html">
+   GSoC Application Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contributor-guide/gsoc_project_ideas.html">
+   GSoC Project Ideas
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -595,6 +661,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#op-spaceship">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       &lt;=&gt;
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#is-distinct-from">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -664,7 +739,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id17">
      <code class="docutils literal notranslate">
       <span class="pre">
        ~~
@@ -673,7 +748,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id18">
      <code class="docutils literal notranslate">
       <span class="pre">
        ~~*
@@ -682,7 +757,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
+    <a class="reference internal nav-link" href="#id19">
      <code class="docutils literal notranslate">
       <span class="pre">
        !~~
@@ -691,7 +766,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
+    <a class="reference internal nav-link" href="#id20">
      <code class="docutils literal notranslate">
       <span class="pre">
        !~~*
@@ -812,6 +887,18 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#literals">
+   Literals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escaping">
+     Escaping
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
 </nav>
@@ -858,8 +945,8 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<section id="operators">
-<h1>Operators<a class="headerlink" href="#operators" title="Link to this heading">¶</a></h1>
+<section id="operators-and-literals">
+<h1>Operators and Literals<a class="headerlink" href="#operators-and-literals" title="Link to this heading">¶</a></h1>
 <section id="numerical-operators">
 <h2>Numerical Operators<a class="headerlink" href="#numerical-operators" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -939,6 +1026,7 @@
 <li><p><a class="reference internal" href="#op-le">&lt;= (less than or equal to)</a></p></li>
 <li><p><a class="reference internal" href="#op-gt">&gt; (greater than)</a></p></li>
 <li><p><a class="reference internal" href="#op-ge">&gt;= (greater than or equal to)</a></p></li>
+<li><p><a class="reference internal" href="#op-spaceship">&lt;=&gt; (three-way comparison, alias for IS NOT DISTINCT FROM)</a></p></li>
 <li><p><a class="reference internal" href="#is-distinct-from">IS DISTINCT FROM</a></p></li>
 <li><p><a class="reference internal" href="#is-not-distinct-from">IS NOT DISTINCT FROM</a></p></li>
 <li><p><a class="reference internal" href="#op-re-match">~ (regex match)</a></p></li>
@@ -1018,6 +1106,42 @@
 </pre></div>
 </div>
 </section>
+<section id="op-spaceship">
+<span id="id12"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;=&gt;</span></code><a class="headerlink" href="#op-spaceship" title="Link to this heading">¶</a></h3>
+<p>Three-way comparison operator. A NULL-safe operator that returns true if both operands are equal or both are NULL, false otherwise.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">true</span><span class="w">                           </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------------------------+</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Int64</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">false</span><span class="w">                              </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">------------------------------------+</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Int64</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Int64</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">false</span><span class="w">                                  </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Int64</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Int64</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="k">true</span><span class="w">                                   </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------------------------+</span>
+</pre></div>
+</div>
+</section>
 <section id="is-distinct-from">
 <h3><code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">DISTINCT</span> <span class="pre">FROM</span></code><a class="headerlink" href="#is-distinct-from" title="Link to this heading">¶</a></h3>
 <p>Guarantees the result of a comparison is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> and not an empty set</p>
@@ -1043,7 +1167,7 @@
 </div>
 </section>
 <section id="op-re-match">
-<span id="id12"></span><h3><code class="docutils literal notranslate"><span class="pre">~</span></code><a class="headerlink" href="#op-re-match" title="Link to this heading">¶</a></h3>
+<span id="id13"></span><h3><code class="docutils literal notranslate"><span class="pre">~</span></code><a class="headerlink" href="#op-re-match" title="Link to this heading">¶</a></h3>
 <p>Regex Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s1">&#39;^datafusion(-cli)*&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">-------------------------------------------------+</span>
@@ -1055,7 +1179,7 @@
 </div>
 </section>
 <section id="op-re-match-i">
-<span id="id13"></span><h3><code class="docutils literal notranslate"><span class="pre">~*</span></code><a class="headerlink" href="#op-re-match-i" title="Link to this heading">¶</a></h3>
+<span id="id14"></span><h3><code class="docutils literal notranslate"><span class="pre">~*</span></code><a class="headerlink" href="#op-re-match-i" title="Link to this heading">¶</a></h3>
 <p>Regex Case-Insensitive Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">~*</span><span class="w"> </span><span class="s1">&#39;^DATAFUSION(-cli)*&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">--------------------------------------------------+</span>
@@ -1067,7 +1191,7 @@
 </div>
 </section>
 <section id="op-re-not-match">
-<span id="id14"></span><h3><code class="docutils literal notranslate"><span class="pre">!~</span></code><a class="headerlink" href="#op-re-not-match" title="Link to this heading">¶</a></h3>
+<span id="id15"></span><h3><code class="docutils literal notranslate"><span class="pre">!~</span></code><a class="headerlink" href="#op-re-not-match" title="Link to this heading">¶</a></h3>
 <p>Not Regex Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="s1">&#39;^DATAFUSION(-cli)*&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">--------------------------------------------------+</span>
@@ -1079,7 +1203,7 @@
 </div>
 </section>
 <section id="op-re-not-match-i">
-<span id="id15"></span><h3><code class="docutils literal notranslate"><span class="pre">!~*</span></code><a class="headerlink" href="#op-re-not-match-i" title="Link to this heading">¶</a></h3>
+<span id="id16"></span><h3><code class="docutils literal notranslate"><span class="pre">!~*</span></code><a class="headerlink" href="#op-re-not-match-i" title="Link to this heading">¶</a></h3>
 <p>Not Regex Case-Insensitive Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">!~*</span><span class="w"> </span><span class="s1">&#39;^DATAFUSION(-cli)+&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------------------------------------------+</span>
@@ -1090,8 +1214,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id16">
-<h3><code class="docutils literal notranslate"><span class="pre">~~</span></code><a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<section id="id17">
+<h3><code class="docutils literal notranslate"><span class="pre">~~</span></code><a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
 <p>Like Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s1">&#39;dat_f%n&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------------------------------+</span>
@@ -1102,8 +1226,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id17">
-<h3><code class="docutils literal notranslate"><span class="pre">~~*</span></code><a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<section id="id18">
+<h3><code class="docutils literal notranslate"><span class="pre">~~*</span></code><a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
 <p>Case-Insensitive Like Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">~~*</span><span class="w"> </span><span class="s1">&#39;Dat_F%n&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">----------------------------------------+</span>
@@ -1114,8 +1238,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id18">
-<h3><code class="docutils literal notranslate"><span class="pre">!~~</span></code><a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<section id="id19">
+<h3><code class="docutils literal notranslate"><span class="pre">!~~</span></code><a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
 <p>Not Like Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">!~~</span><span class="w"> </span><span class="s1">&#39;Dat_F%n&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">----------------------------------------+</span>
@@ -1126,8 +1250,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id19">
-<h3><code class="docutils literal notranslate"><span class="pre">!~~*</span></code><a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<section id="id20">
+<h3><code class="docutils literal notranslate"><span class="pre">!~~*</span></code><a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
 <p>Not Case-Insensitive Like Match</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;datafusion&#39;</span><span class="w"> </span><span class="o">!~~*</span><span class="w"> </span><span class="s1">&#39;Dat%F_n&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">-----------------------------------------+</span>
@@ -1180,7 +1304,7 @@
 <li><p><a class="reference internal" href="#op-shift-l">&lt;&lt; (bitwise shift left)</a></p></li>
 </ul>
 <section id="op-bit-and">
-<span id="id20"></span><h3><code class="docutils literal notranslate"><span class="pre">&amp;</span></code><a class="headerlink" href="#op-bit-and" title="Link to this heading">¶</a></h3>
+<span id="id21"></span><h3><code class="docutils literal notranslate"><span class="pre">&amp;</span></code><a class="headerlink" href="#op-bit-and" title="Link to this heading">¶</a></h3>
 <p>Bitwise And</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------------+</span>
@@ -1192,7 +1316,7 @@
 </div>
 </section>
 <section id="op-bit-or">
-<span id="id21"></span><h3><code class="docutils literal notranslate"><span class="pre">|</span></code><a class="headerlink" href="#op-bit-or" title="Link to this heading">¶</a></h3>
+<span id="id22"></span><h3><code class="docutils literal notranslate"><span class="pre">|</span></code><a class="headerlink" href="#op-bit-or" title="Link to this heading">¶</a></h3>
 <p>Bitwise Or</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------------+</span>
@@ -1204,7 +1328,7 @@
 </div>
 </section>
 <section id="op-bit-xor">
-<span id="id22"></span><h3><code class="docutils literal notranslate"><span class="pre">#</span></code><a class="headerlink" href="#op-bit-xor" title="Link to this heading">¶</a></h3>
+<span id="id23"></span><h3><code class="docutils literal notranslate"><span class="pre">#</span></code><a class="headerlink" href="#op-bit-xor" title="Link to this heading">¶</a></h3>
 <p>Bitwise Xor (interchangeable with <code class="docutils literal notranslate"><span class="pre">^</span></code>)</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------------+</span>
@@ -1216,7 +1340,7 @@
 </div>
 </section>
 <section id="op-shift-r">
-<span id="id23"></span><h3><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code><a class="headerlink" href="#op-shift-r" title="Link to this heading">¶</a></h3>
+<span id="id24"></span><h3><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code><a class="headerlink" href="#op-shift-r" title="Link to this heading">¶</a></h3>
 <p>Bitwise Shift Right</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">----------------------+</span>
@@ -1228,7 +1352,7 @@
 </div>
 </section>
 <section id="op-shift-l">
-<span id="id24"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code><a class="headerlink" href="#op-shift-l" title="Link to this heading">¶</a></h3>
+<span id="id25"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code><a class="headerlink" href="#op-shift-l" title="Link to this heading">¶</a></h3>
 <p>Bitwise Shift Left</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">----------------------+</span>
@@ -1248,7 +1372,7 @@
 <li><p><a class="reference internal" href="#op-arr-contained-by">&lt;&#64; (array is contained by)</a></p></li>
 </ul>
 <section id="op-str-cat">
-<span id="id25"></span><h3><code class="docutils literal notranslate"><span class="pre">||</span></code><a class="headerlink" href="#op-str-cat" title="Link to this heading">¶</a></h3>
+<span id="id26"></span><h3><code class="docutils literal notranslate"><span class="pre">||</span></code><a class="headerlink" href="#op-str-cat" title="Link to this heading">¶</a></h3>
 <p>String Concatenation</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;Hello, &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;DataFusion!&#39;</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">----------------------------------------+</span>
@@ -1260,7 +1384,7 @@
 </div>
 </section>
 <section id="op-arr-contains">
-<span id="id26"></span><h3><code class="docutils literal notranslate"><span class="pre">&#64;&gt;</span></code><a class="headerlink" href="#op-arr-contains" title="Link to this heading">¶</a></h3>
+<span id="id27"></span><h3><code class="docutils literal notranslate"><span class="pre">&#64;&gt;</span></code><a class="headerlink" href="#op-arr-contains" title="Link to this heading">¶</a></h3>
 <p>Array Contains</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">make_array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">@&gt;</span><span class="w"> </span><span class="n">make_array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="o">+</span><span class="c1">-------------------------------------------------------------------------+</span>
@@ -1272,7 +1396,7 @@
 </div>
 </section>
 <section id="op-arr-contained-by">
-<span id="id27"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;&#64;</span></code><a class="headerlink" href="#op-arr-contained-by" title="Link to this heading">¶</a></h3>
+<span id="id28"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;&#64;</span></code><a class="headerlink" href="#op-arr-contained-by" title="Link to this heading">¶</a></h3>
 <p>Array Is Contained By</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">make_array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;@</span><span class="w"> </span><span class="n">make_array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="o">+</span><span class="c1">-------------------------------------------------------------------------+</span>
@@ -1280,6 +1404,58 @@
 <span class="o">+</span><span class="c1">-------------------------------------------------------------------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="k">true</span><span class="w">                                                                    </span><span class="o">|</span>
 <span class="o">+</span><span class="c1">-------------------------------------------------------------------------+</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="literals">
+<h2>Literals<a class="headerlink" href="#literals" title="Link to this heading">¶</a></h2>
+<p>Use single quotes for literal values. For example, the string <code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">bar</span></code> is
+referred to using <code class="docutils literal notranslate"><span class="pre">'foo</span> <span class="pre">bar'</span></code></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="escaping">
+<h3>Escaping<a class="headerlink" href="#escaping" title="Link to this heading">¶</a></h3>
+<p>Unlike many other languages, SQL literals do not by default support C-style escape
+sequences such as <code class="docutils literal notranslate"><span class="pre">\n</span></code> for newline. Instead all characters in a <code class="docutils literal notranslate"><span class="pre">'</span></code> string are treated
+literally.</p>
+<p>To escape <code class="docutils literal notranslate"><span class="pre">'</span></code> in SQL literals, use <code class="docutils literal notranslate"><span class="pre">''</span></code>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="s1">&#39;it&#39;&#39;s escaped&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Utf8</span><span class="p">(</span><span class="ss">&quot;it&#39;s escaped&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">it</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">escaped</span><span class="w">         </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">fetched</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>Strings such as <code class="docutils literal notranslate"><span class="pre">foo\nbar</span></code> mean <code class="docutils literal notranslate"><span class="pre">\</span></code> followed by <code class="docutils literal notranslate"><span class="pre">n</span></code> (not newline):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="s1">&#39;foo\nbar&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Utf8</span><span class="p">(</span><span class="ss">&quot;foo\nbar&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">foo</span><span class="err">\</span><span class="n">nbar</span><span class="w">         </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">------------------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">fetched</span><span class="p">.</span>
+<span class="n">Elapsed</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">005</span><span class="w"> </span><span class="n">seconds</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>To add escaped characters such as newline or tab, instead of <code class="docutils literal notranslate"><span class="pre">\n</span></code> you use the
+<code class="docutils literal notranslate"><span class="pre">E</span></code> style strings. For example, to add the text with a newline</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>foo
+bar
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">E'foo\nbar'</span></code></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">E</span><span class="s1">&#39;foo\nbar&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-----------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Utf8</span><span class="p">(</span><span class="ss">&quot;foo</span>
+<span class="ss">bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">foo</span>
+<span class="n">bar</span><span class="w">         </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-----------------+</span>
 </pre></div>
 </div>
 </section>
@@ -1322,13 +1498,13 @@
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2019-2024, Apache Software Foundation.<br>
+    &copy; Copyright 2019-2025, Apache Software Foundation.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br>
 </p>
     </div>
     

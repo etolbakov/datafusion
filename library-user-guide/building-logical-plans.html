@@ -22,16 +22,15 @@
       
   
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css?v=1140d252" />
     <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=c6d785ac" />
     
     <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
   
     <script src="../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="true" defer="true" src="https://buttons.github.io/buttons.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Catalogs, Schemas, and Tables" href="catalogs.html" />
@@ -152,6 +151,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/features.html">
+   Features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/concepts-readings-events.html">
+   Concepts, Readings, Events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../user-guide/crate-configuration.html">
    Crate Configuration
   </a>
@@ -184,6 +193,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../user-guide/cli/datasources.html">
      Local Files / Directories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/cli/functions.html">
+     CLI Specific Functions
     </a>
    </li>
   </ul>
@@ -245,7 +259,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../user-guide/sql/operators.html">
-     Operators
+     Operators and Literals
     </a>
    </li>
    <li class="toctree-l2">
@@ -264,13 +278,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../user-guide/sql/sql_status.html">
-     Status
+    <a class="reference internal" href="../user-guide/sql/special_functions.html">
+     Special Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../user-guide/sql/write_options.html">
-     Write Options
+    <a class="reference internal" href="../user-guide/sql/format_options.html">
+     Format Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/sql/prepared_statements.html">
+     Prepared Statements
     </a>
    </li>
   </ul>
@@ -300,6 +319,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
    Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="upgrading.html">
+   Upgrade Guides
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extensions.html">
+   Extensions List
   </a>
  </li>
  <li class="toctree-l1">
@@ -333,14 +362,36 @@
    Catalogs, Schemas, and Tables
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="adding-udfs.html">
-   Adding User Defined Functions: Scalar/Window/Aggregate/Table Functions
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="functions/index.html">
+   Functions
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="functions/adding-udfs.html">
+     Adding User Defined Functions: Scalar/Window/Aggregate/Table Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="functions/spark.html">
+     Spark Compatible Functions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="custom-table-providers.html">
    Custom Table Provider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="table-constraints.html">
+   Table Constraint Enforcement
   </a>
  </li>
  <li class="toctree-l1">
@@ -376,8 +427,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../contributor-guide/getting_started.html">
-   Getting Started
+  <a class="reference internal" href="../contributor-guide/development_environment.html">
+   Development Environment
   </a>
  </li>
  <li class="toctree-l1">
@@ -388,6 +439,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../contributor-guide/testing.html">
    Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributor-guide/api-health.html">
+   API health policy
   </a>
  </li>
  <li class="toctree-l1">
@@ -414,8 +470,8 @@
   <a class="reference internal" href="../contributor-guide/specification/index.html">
    Specifications
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -431,6 +487,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributor-guide/gsoc_application_guidelines.html">
+   GSoC Application Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributor-guide/gsoc_project_ideas.html">
+   GSoC Project Ideas
+  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -697,7 +763,7 @@ specific algorithms and detailed optimizations compared to. Given a
 <span class="w">    </span><span class="c1">// TableProvider. For this example, we don&#39;t provide any data</span>
 <span class="w">    </span><span class="c1">// but in production code, this would have `RecordBatch`es with</span>
 <span class="w">    </span><span class="c1">// in memory data</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">table_provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">MemTable</span><span class="p">::</span><span class="n">try_new</span><span class="p">(</span><span class="n">Arc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">schema</span><span class="p">),</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[])</span><span class="o">?</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">table_provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">MemTable</span><span class="p">::</span><span class="n">try_new</span><span class="p">(</span><span class="n">Arc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">schema</span><span class="p">),</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="fm">vec!</span><span class="p">[]])</span><span class="o">?</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// Use the provider_as_source function to convert the TableProvider to a table source</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">table_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider_as_source</span><span class="p">(</span><span class="n">table_provider</span><span class="p">);</span>
 
@@ -715,7 +781,7 @@ specific algorithms and detailed optimizations compared to. Given a
 </pre></div>
 </div>
 <p>This example produces the following physical plan:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MemoryExec: partitions=0, partition_sizes=[]
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DataSourceExec: partitions=0, partition_sizes=[]
 </pre></div>
 </div>
 </section>
@@ -723,8 +789,8 @@ specific algorithms and detailed optimizations compared to. Given a
 <h2>Table Sources<a class="headerlink" href="#table-sources" title="Link to this heading">¶</a></h2>
 <p>The previous examples use a <a class="reference external" href="https://docs.rs/datafusion-expr/latest/datafusion_expr/logical_plan/builder/struct.LogicalTableSource.html">LogicalTableSource</a>, which is used for tests and documentation in DataFusion, and is also
 suitable if you are using DataFusion to build logical plans but do not use DataFusion’s physical planner.</p>
-<p>However, it is more common to use a <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/provider/trait.TableProvider.html">TableProvider</a>. To get a <a class="reference external" href="https://docs.rs/datafusion-expr/latest/datafusion_expr/trait.TableSource.html">TableSource</a> from a
-<a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/provider/trait.TableProvider.html">TableProvider</a>, use <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/default_table_source/fn.provider_as_source.html">provider_as_source</a> or <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/default_table_source/struct.DefaultTableSource.html">DefaultTableSource</a>.</p>
+<p>However, it is more common to use a <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/trait.TableProvider.html">TableProvider</a>. To get a <a class="reference external" href="https://docs.rs/datafusion-expr/latest/datafusion_expr/trait.TableSource.html">TableSource</a> from a
+<a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/trait.TableProvider.html">TableProvider</a>, use <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/default_table_source/fn.provider_as_source.html">provider_as_source</a> or <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/datasource/default_table_source/struct.DefaultTableSource.html">DefaultTableSource</a>.</p>
 </section>
 </section>
 
@@ -764,13 +830,13 @@ suitable if you are using DataFusion to build logical plans but do not use DataF
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2019-2024, Apache Software Foundation.<br>
+    &copy; Copyright 2019-2025, Apache Software Foundation.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br>
 </p>
     </div>
     
