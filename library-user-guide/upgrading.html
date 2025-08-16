@@ -453,7 +453,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../contributor-guide/roadmap.html">
-   Roadmap
+   Roadmap and Improvement Proposals
   </a>
  </li>
  <li class="toctree-l1">
@@ -658,6 +658,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schema-rewriter-module-moved-to-new-crate">
+     Schema Rewriter Module Moved to New Crate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#upgrade-to-arrow-56-0-0-and-parquet-56-0-0">
      Upgrade to arrow
      <code class="docutils literal notranslate">
@@ -681,6 +686,11 @@
        ExecutionPlan::reset_state
       </span>
      </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loop-join-input-sort-order-cannot-be-preserved">
+     Nested Loop Join input sort order cannot be preserved
     </a>
    </li>
   </ul>
@@ -1308,6 +1318,23 @@ parameter.</p>
 </pre></div>
 </div>
 </section>
+<section id="schema-rewriter-module-moved-to-new-crate">
+<h3>Schema Rewriter Module Moved to New Crate<a class="headerlink" href="#schema-rewriter-module-moved-to-new-crate" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">schema_rewriter</span></code> module and its associated symbols have been moved from <code class="docutils literal notranslate"><span class="pre">datafusion_physical_expr</span></code> to a new crate <code class="docutils literal notranslate"><span class="pre">datafusion_physical_expr_adapter</span></code>. This affects the following symbols:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DefaultPhysicalExprAdapter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DefaultPhysicalExprAdapterFactory</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PhysicalExprAdapter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PhysicalExprAdapterFactory</span></code></p></li>
+</ul>
+<p>To upgrade, change your imports to:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">datafusion_physical_expr_adapter</span><span class="p">::{</span>
+<span class="w">    </span><span class="n">DefaultPhysicalExprAdapter</span><span class="p">,</span><span class="w"> </span><span class="n">DefaultPhysicalExprAdapterFactory</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PhysicalExprAdapter</span><span class="p">,</span><span class="w"> </span><span class="n">PhysicalExprAdapterFactory</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
 <section id="upgrade-to-arrow-56-0-0-and-parquet-56-0-0">
 <h3>Upgrade to arrow <code class="docutils literal notranslate"><span class="pre">56.0.0</span></code> and parquet <code class="docutils literal notranslate"><span class="pre">56.0.0</span></code><a class="headerlink" href="#upgrade-to-arrow-56-0-0-and-parquet-56-0-0" title="Link to this heading">¶</a></h3>
 <p>This version of DataFusion upgrades the underlying Apache Arrow implementation
@@ -1320,6 +1347,12 @@ for more details.</p>
 produced incorrect results in recursive queries, a new method <code class="docutils literal notranslate"><span class="pre">reset_state</span></code> has been added to the <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code> trait.</p>
 <p>Any <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code> that needs to maintain internal state or references to other nodes in the execution plan tree should implement this method to reset that state.
 See <a class="reference external" href="https://github.com/apache/datafusion/pull/17028">#17028</a> for more details and an example implementation for <code class="docutils literal notranslate"><span class="pre">SortExec</span></code>.</p>
+</section>
+<section id="nested-loop-join-input-sort-order-cannot-be-preserved">
+<h3>Nested Loop Join input sort order cannot be preserved<a class="headerlink" href="#nested-loop-join-input-sort-order-cannot-be-preserved" title="Link to this heading">¶</a></h3>
+<p>The Nested Loop Join operator has been rewritten from scratch to improve performance and memory efficiency. From the micro-benchmarks: this change introduces up to 5X speed-up and uses only 1% memory in extreme cases compared to the previous implementation.</p>
+<p>However, the new implementation cannot preserve input sort order like the old version could. This is a fundamental design trade-off that prioritizes performance and memory efficiency over sort order preservation.</p>
+<p>See <a class="reference external" href="https://github.com/apache/datafusion/pull/16996">#16996</a> for details.</p>
 </section>
 </section>
 <section id="datafusion-49-0-0">
